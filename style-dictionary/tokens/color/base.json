@@ -1,0 +1,9 @@
+{
+  "color": {
+    "black": { "value": "#090E34" },
+    "dark": { "value": "#1D2144" },
+    "primary": { "value": "#4A6CF7" },
+    "yellow": { "value": "#FBB040" },
+    "body": { "value": "#959CB1" }
+  }
+}

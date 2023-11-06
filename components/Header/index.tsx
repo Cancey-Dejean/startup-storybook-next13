@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 import classNames from "classnames";
+import Logo from "../atoms/Logo";
+import MobileMenuBtn from "../atoms/MobileMenuBtn";
+import { Button } from "../atoms/Button/Button";
 
 export type HeaderProps = {};
 
@@ -12,7 +15,7 @@ const Header = ({}: HeaderProps) => {
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarToggleHandler = () => {
-    setNavbarOpen(!navbarOpen);
+    setNavbarOpen((prevState) => !prevState);
   };
 
   // Sticky Navbar
@@ -65,46 +68,25 @@ const Header = ({}: HeaderProps) => {
                   sticky ? "py-5 lg:py-2" : "py-8",
                 )}
               >
-                <Image
-                  src="/images/logo/logo-2.svg"
-                  alt="logo"
-                  width={140}
-                  height={30}
+                <Logo
+                  imgSrc="/images/logo/logo-2.svg"
                   className="w-full dark:hidden"
+                  imgAlt="logo"
                 />
-                <Image
-                  src="/images/logo/logo.svg"
-                  alt="logo"
-                  width={140}
-                  height={30}
+
+                <Logo
+                  imgSrc="/images/logo/logo.svg"
                   className="hidden w-full dark:block"
+                  imgAlt="logo"
                 />
               </Link>
             </div>
+
             <div className="flex w-full items-center justify-between px-4">
               <div>
-                <button
-                  onClick={navbarToggleHandler}
-                  id="navbarToggler"
-                  aria-label="Mobile Menu"
-                  className="absolute right-4 top-1/2 block translate-y-[-50%] rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
-                >
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? " top-[7px] rotate-45" : " "
-                    }`}
-                  />
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? "opacity-0 " : " "
-                    }`}
-                  />
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? " top-[-8px] -rotate-45" : " "
-                    }`}
-                  />
-                </button>
+                {/* Mobile Menu */}
+                <MobileMenuBtn navbarToggleHandler={navbarToggleHandler} />
+
                 <nav
                   id="navbarCollapse"
                   className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
@@ -125,7 +107,7 @@ const Header = ({}: HeaderProps) => {
                           </Link>
                         ) : (
                           <>
-                            <a
+                            <button
                               onClick={() => handleSubmenu(index)}
                               className="flex cursor-pointer items-center justify-between py-2 text-base text-dark group-hover:opacity-70 dark:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
                             >
@@ -138,7 +120,7 @@ const Header = ({}: HeaderProps) => {
                                   />
                                 </svg>
                               </span>
-                            </a>
+                            </button>
                             <div
                               className={`submenu relative left-0 top-full rounded-md bg-white transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
                                 openIndex === index ? "block" : "hidden"
@@ -161,22 +143,23 @@ const Header = ({}: HeaderProps) => {
                   </ul>
                 </nav>
               </div>
+
               <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <Link
-                  href="/signin"
-                  className="hidden px-7 py-3 text-base font-bold text-dark hover:opacity-70 dark:text-white md:block"
-                >
-                  Sign In
-                </Link>
-                <Link
-                  href="/signup"
-                  className="ease-in-up hidden rounded-md bg-primary px-8 py-3 text-base font-bold text-white transition duration-300 hover:bg-opacity-90 hover:shadow-signUp md:block md:px-9 lg:px-6 xl:px-9"
-                >
-                  Sign Up
-                </Link>
-                <div>
-                  <ThemeToggler />
-                </div>
+                <Button
+                  intent="text"
+                  className="hidden md:block"
+                  label=" Sign In"
+                />
+
+                <Button
+                  intent="primary"
+                  fontWeight="bold"
+                  shadowHover
+                  className="ease-in-up hidden md:block md:px-9 lg:px-6"
+                  label=" Sign Up"
+                />
+
+                <ThemeToggler />
               </div>
             </div>
           </div>

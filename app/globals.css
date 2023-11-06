@@ -31,3 +31,8 @@
     @apply opacity-100;
   }
 }
+
+/* Storybook Styles ONLY: DO NOT DELETE */
+.sbdocs-content {
+  @apply mx-auto !max-w-[1920px];
+}
