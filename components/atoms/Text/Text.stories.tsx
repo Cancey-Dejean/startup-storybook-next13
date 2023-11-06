@@ -9,8 +9,7 @@ const meta = {
   component: Text,
   args: {
     as: "h1",
-    intent: "semibold",
-    size: "heading-one",
+    intent: "display-one",
   },
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
@@ -26,17 +25,7 @@ const meta = {
     },
     intent: {
       control: { type: "select" },
-      options: ["normal", "semibold", "bold"],
-    },
-    size: {
-      control: { type: "select" },
-      options: [
-        "display-one",
-        "display-two",
-        "heading-one",
-        "heading-two",
-        "body",
-      ],
+      options: ["display-one"],
     },
   },
 } satisfies Meta<typeof Text>;

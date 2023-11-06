@@ -12,6 +12,7 @@ const button = cva(
         secondary: [
           " bg-black/20 text-black hover:bg-black/30 dark:bg-white/20 dark:text-white dark:hover:bg-white/30",
         ],
+        tertiary: ["bg-white text-body-color dark:bg-dark-btn"],
         text: ["text-dark bg-transparent hover:opacity-70 dark:text-white"],
       },
       size: {
@@ -22,6 +23,11 @@ const button = cva(
         semibold: "font-semibold",
         bold: "font-bold",
       },
+      shadow: {
+        none: "shadow-none",
+        one: "shadow-one",
+        signUp: "shadow-signUp",
+      },
       shadowHover: {
         true: "hover:shadow-signUp",
       },
@@ -30,6 +36,7 @@ const button = cva(
       intent: "primary",
       size: "large",
       fontWeight: "semibold",
+      shadow: "none",
       shadowHover: false,
     },
   },
@@ -39,7 +46,7 @@ export type ButtonProps = VariantProps<typeof button> & {
   /**
    * Description goes here
    */
-  intent?: "primary" | "secondary" | "text";
+  intent?: "primary" | "secondary" | "tertiary" | "text";
   /**
    * Description goes here
    */
@@ -71,6 +78,10 @@ export type ButtonProps = VariantProps<typeof button> & {
   /**
    * Description goes here
    */
+  shadow?: "none" | "one" | "signUp";
+  /**
+   * Description goes here
+   */
   shadowHover?: boolean;
   /**
    * Description goes here
@@ -87,6 +98,7 @@ export const Button = ({
   ariaLabel = "Aria Label",
   size = "medium",
   linkUrl = "",
+  shadow = "none",
   shadowHover = false,
   icon,
   onClick,
@@ -103,7 +115,7 @@ export const Button = ({
   return linkUrl === "" ? (
     <button
       className={twMerge(
-        button({ intent, size, className, fontWeight, shadowHover }),
+        button({ intent, size, className, fontWeight, shadow, shadowHover }),
       )}
       {...props}
       id={formatId}
@@ -117,7 +129,7 @@ export const Button = ({
     <Link
       href={linkUrl}
       className={twMerge(
-        button({ intent, size, className, fontWeight, shadowHover }),
+        button({ intent, size, className, fontWeight, shadow, shadowHover }),
       )}
       aria-label={ariaLabel}
       {...props}

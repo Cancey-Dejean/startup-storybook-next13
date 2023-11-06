@@ -15,6 +15,8 @@ const meta = {
     className: "",
     intent: "primary",
     fontWeight: "semibold",
+    size: "medium",
+    shadow: "none",
     shadowHover: false,
     label: "Button",
     ariaLabel: "Aria Label",
@@ -27,7 +29,7 @@ const meta = {
     },
     intent: {
       control: { type: "select" },
-      options: ["primary", "secondary", "text"],
+      options: ["primary", "secondary", "tertiary", "text"],
     },
     size: {
       control: { type: "select" },
@@ -36,6 +38,10 @@ const meta = {
     fontWeight: {
       control: { type: "select" },
       options: ["semibold", "bold"],
+    },
+    shadow: {
+      control: { type: "select" },
+      options: ["none", "one", "signUp"],
     },
     icon: {
       control: false,
