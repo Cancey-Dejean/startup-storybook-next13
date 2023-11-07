@@ -1,4 +1,4 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
+import Breadcrumb from "@/components/Common/BreadCrumb";
 import Contact from "@/components/Contact";
 
 const ContactPage = () => {

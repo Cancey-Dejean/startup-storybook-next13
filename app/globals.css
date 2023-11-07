@@ -7,6 +7,20 @@
 @layer base {
   body {
     font-family: "Inter", sans-serif;
+    @apply flex h-screen flex-col text-body-color dark:text-white dark:opacity-90;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-black dark:text-white;
+  }
+
+  p {
+    @apply !leading-relaxed;
   }
 }
 

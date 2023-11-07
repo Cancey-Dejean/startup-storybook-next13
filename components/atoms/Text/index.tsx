@@ -9,8 +9,15 @@ export type TextProps = {
   /**
    * Description goes here
    */
-  intent?: "display-one";
-
+  intent?:
+    | "display-one"
+    | "display-two"
+    | "heading-one"
+    | "heading-two"
+    | "body-large"
+    | "body"
+    | "label"
+    | "caption";
   /**
    * Description goes here
    */
@@ -18,20 +25,39 @@ export type TextProps = {
   /**
    * Description goes here
    */
-  fontWeight?: "normal" | "semibold" | "bold";
+  fontWeight?: "normal" | "medium" | "semibold" | "bold";
   /**
    * Description goes here
    */
   children: React.ReactNode;
 };
 
-const heading = cva(" font-bold leading-tight text-black", {
+const heading = cva("", {
   variants: {
     intent: {
-      "display-one": ["text-3xl", "sm:text-4xl", "md:text-5xl"],
+      "display-one": [
+        "text-3xl leading-tight",
+        "sm:text-4xl sm:leading-tight",
+        "md:text-5xl md:leading-tight",
+      ],
+      "display-two": [
+        "text-2xl",
+        "sm:text-4xl",
+        "lg:text-[44px] lg:leading-[56px]",
+      ],
+      "heading-one": ["text-2xl", "sm:text-3xl"],
+      "heading-two": ["text-xl", "sm:text-2xl"],
+      "body-large": [
+        "text-base dark:text-white dark:opacity-90 ",
+        "sm:text-lg md:text-xl sm:text-[20px] leading-[30px]",
+      ],
+      body: ["text-base"],
+      label: ["text-sm"],
+      caption: ["text-xs"],
     },
     fontWeight: {
       normal: ["font-normal"],
+      medium: ["font-medium"],
       semibold: ["font-semibold"],
       bold: ["font-bold"],
     },
