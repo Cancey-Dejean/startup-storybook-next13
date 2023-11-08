@@ -1,6 +1,6 @@
-import { Feature } from "@/types/feature";
+// import { Feature } from "@/types/feature";
 
-const featuresData: Feature[] = [
+export const featuresData = [
   {
     id: 1,
     icon: (
@@ -92,4 +92,3 @@ const featuresData: Feature[] = [
       "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
   },
 ];
-export default featuresData;

@@ -39,7 +39,7 @@ export type HeroProps = {
 
 const Hero = ({
   title = "Free and Open-Source Next.js Template for Startup & SaaS",
-  subText = "Startup is free Next.js template for startups and SaaS business websites comes with all the essential pages,  components, and sections you need to launch a complete business website, built-with Next 13.x and Tailwind CSS.",
+  subText = "Startup is free Next.js template for startups and SaaS business websites comes with all the essential pages,  components, and sections you need to launch a complete business website, built-with Next 14.x and Tailwind CSS.",
   showImageTopRight = true,
   showImageBottomLeft = true,
   btnOneLabel = "🔥 Get Pro",

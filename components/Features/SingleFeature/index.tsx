@@ -1,7 +1,17 @@
-import { Feature } from "@/types/feature";
+// import { Feature } from "@/types/feature";
+export type Feature = {
+  id?: number;
+  icon?: React.ReactNode;
+  title?: string;
+  paragraph?: string;
+};
 
-const SingleFeature = ({ feature }: { feature: Feature }) => {
-  const { icon, title, paragraph } = feature;
+const SingleFeature = ({
+  id,
+  icon,
+  title = "Crafted for Startups",
+  paragraph = "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
+}: Feature) => {
   return (
     <div className="w-full">
       <div className="wow fadeInUp" data-wow-delay=".15s">

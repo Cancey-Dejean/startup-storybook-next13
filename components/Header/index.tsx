@@ -52,10 +52,10 @@ const Header = ({}: HeaderProps) => {
     <>
       <header
         className={classNames(
-          "header left-0 top-0 z-40 flex w-full items-center bg-transparent",
+          "header fixed left-0 top-0 z-40 flex w-full items-center bg-transparent",
           sticky
-            ? "fixed bg-white bg-opacity-80 shadow-sticky backdrop-blur-sm transition dark:bg-primary dark:bg-opacity-20"
-            : "sticky",
+            ? "bg-white bg-opacity-80 shadow-sticky backdrop-blur-sm transition dark:bg-primary dark:bg-opacity-20"
+            : "",
         )}
       >
         <div className="container">
