@@ -1,10 +1,8 @@
 import SectionTitle from "../Common/SectionTitle";
 import SingleFeature from "./SingleFeature";
-import featuresData from "./featuresData";
+import { featuresData } from "./featuresData";
 
-type FeaturesProps = {};
-
-const Features = ({}: FeaturesProps) => {
+const Features = () => {
   return (
     <>
       <section
@@ -19,14 +17,13 @@ const Features = ({}: FeaturesProps) => {
           />
 
           <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-            {/* {featuresData.map((feature) => (
-              
-            ))} */}
-
-            <SingleFeature
-              key="1"
-              // icon={feature.icon}
-            />
+            {featuresData.map((feature, index) => (
+              <SingleFeature
+                key={index}
+                icon={feature.icon}
+                title={feature.title}
+              />
+            ))}
           </div>
         </div>
       </section>

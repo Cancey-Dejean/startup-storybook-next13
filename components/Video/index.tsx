@@ -1,13 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, Fragment } from "react";
 import SectionTitle from "../Common/SectionTitle";
-
-import ModalVideo from "react-modal-video";
+import { Dialog, Transition } from "@headlessui/react";
+import ModalVideo from "../molecules/ModalVideo/ModalVideo";
+import VideoThumb from "../../public/images/video/video.jpg";
 
 const Video = () => {
-  const [isOpen, setOpen] = useState(false);
+  // const [isOpen, setOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   return (
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
@@ -26,10 +28,24 @@ const Video = () => {
               data-wow-delay=".15s"
             >
               <div className="relative aspect-[77/40] items-center justify-center">
+                <ModalVideo
+                  thumb={VideoThumb}
+                  thumbWidth={768}
+                  thumbHeight={432}
+                  thumbAlt="Modal video thumbnail"
+                  videoWidth={1920}
+                  videoHeight={1080}
+                />
+              </div>
+
+              {/* <div className="relative aspect-[77/40] items-center justify-center">
                 <Image src="/images/video/video.jpg" alt="video image" fill />
-                <div className="absolute top-0 right-0 flex h-full w-full items-center justify-center">
+                <div className="absolute right-0 top-0 flex h-full w-full items-center justify-center">
                   <button
-                    onClick={() => setOpen(true)}
+                    // onClick={() => setOpen(true)}
+                    onClick={() => {
+                      setModalOpen(true);
+                    }}
                     className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white bg-opacity-75 text-primary transition hover:bg-opacity-100"
                   >
                     <svg
@@ -42,20 +58,20 @@ const Video = () => {
                     </svg>
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
       </div>
 
-      <ModalVideo
+      {/* <ModalVideo
         channel="youtube"
         autoplay={true}
         start={true}
         isOpen={isOpen}
         videoId="L61p2uyiMSo"
         onClose={() => setOpen(false)}
-      />
+      /> */}
 
       <div className="absolute bottom-0 left-0 right-0 z-[-1]">
         <img src="/images/video/shape.svg" alt="shape" className="w-full" />

@@ -1,14 +1,13 @@
-// import { Feature } from "@/types/feature";
+import { FeatureIconGrid } from "../../../components/atoms/Icons";
+
 export type Feature = {
-  id?: number;
   icon?: React.ReactNode;
   title?: string;
   paragraph?: string;
 };
 
 const SingleFeature = ({
-  id,
-  icon,
+  icon = <FeatureIconGrid />,
   title = "Crafted for Startups",
   paragraph = "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
 }: Feature) => {
