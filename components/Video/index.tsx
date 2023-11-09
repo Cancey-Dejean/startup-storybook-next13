@@ -1,11 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import { useState, useRef, Fragment } from "react";
+import { useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
-import { Dialog, Transition } from "@headlessui/react";
-import ModalVideo from "../molecules/ModalVideo/ModalVideo";
-import VideoThumb from "../../public/images/video/video.jpg";
+import ModalVideo from "../molecules/ModalVideo";
 
 const Video = () => {
   // const [isOpen, setOpen] = useState(false);
@@ -29,12 +26,9 @@ const Video = () => {
             >
               <div className="relative aspect-[77/40] items-center justify-center">
                 <ModalVideo
-                  thumb={VideoThumb}
-                  thumbWidth={768}
-                  thumbHeight={432}
+                  thumb="/images/video/video.jpg"
                   thumbAlt="Modal video thumbnail"
-                  videoWidth={1920}
-                  videoHeight={1080}
+                  video="/videos/video.mp4"
                 />
               </div>
 

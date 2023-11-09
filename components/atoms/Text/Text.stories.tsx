@@ -33,6 +33,7 @@ const meta = {
         "heading-one",
         "heading-two",
         "body-large",
+        "body-medium",
         "body",
         "label",
         "caption",

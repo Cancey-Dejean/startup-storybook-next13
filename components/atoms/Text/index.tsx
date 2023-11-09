@@ -15,6 +15,7 @@ export type TextProps = {
     | "heading-one"
     | "heading-two"
     | "body-large"
+    | "body-medium"
     | "body"
     | "label"
     | "caption";
@@ -48,9 +49,10 @@ const heading = cva("", {
       "heading-one": ["text-2xl", "sm:text-3xl"],
       "heading-two": ["text-xl", "sm:text-2xl"],
       "body-large": [
-        "text-base dark:text-white dark:opacity-90 ",
+        "text-base",
         "sm:text-lg md:text-xl sm:text-[20px] leading-[30px]",
       ],
+      "body-medium": ["text-lg leading-relaxed"],
       body: ["text-base"],
       label: ["text-sm"],
       caption: ["text-xs"],

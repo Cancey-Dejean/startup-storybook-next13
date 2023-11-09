@@ -3,13 +3,13 @@ import type { StaticImageData } from "next/image";
 import { useState, useRef, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
-import { PlayIcon } from "@/components/atoms/Icons";
+import { PlayIcon } from "../../atoms/Icons";
 
 export type ModalVideoProps = {
-  thumb: StaticImageData;
+  thumb: string | StaticImageData;
   thumbnailClass?: string;
-  thumbWidth: number;
-  thumbHeight: number;
+  thumbWidth?: number;
+  thumbHeight?: number;
   thumbAlt: string;
   video: string;
   videoWidth: number;
@@ -17,14 +17,14 @@ export type ModalVideoProps = {
 };
 
 export default function ModalVideo({
-  thumb,
-  thumbWidth = 1920,
-  thumbHeight = 1080,
+  thumb = "/images/video/video.jpg",
+  thumbWidth = 768,
+  thumbHeight = 432,
   thumbnailClass = "",
-  thumbAlt,
-  video = "./videos/video.mp4",
-  videoWidth,
-  videoHeight,
+  thumbAlt = "Modal video thumbnail",
+  video = "/videos/video.mp4",
+  videoWidth = 1920,
+  videoHeight = 1080,
 }: ModalVideoProps) {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -33,7 +33,7 @@ export default function ModalVideo({
     <>
       {/* 1. The button */}
       <button
-        className="focus-visible:ring-indigo-300 group relative  flex items-center justify-center rounded-3xl focus:outline-none focus-visible:ring"
+        className="focus-visible:ring-indigo-300 group relative flex items-center justify-center rounded-3xl focus:outline-none focus-visible:ring"
         onClick={() => {
           setModalOpen(true);
         }}
@@ -85,7 +85,7 @@ export default function ModalVideo({
                 <video
                   ref={videoRef}
                   width={videoWidth}
-                  height={videoWidth}
+                  height={videoHeight}
                   controls
                   className="h-full object-cover"
                 >

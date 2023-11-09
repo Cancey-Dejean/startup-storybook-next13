@@ -1,6 +1,7 @@
 import { Brand } from "@/types/brand";
 import Image from "next/image";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 const brandsData: Brand[] = [
   {
@@ -35,14 +36,24 @@ const brandsData: Brand[] = [
   },
 ];
 
-const Brands = () => {
+export type BrandsProps = {
+  bgColor?: string;
+  sectionSpacing?: string;
+};
+
+const Brands = ({ bgColor, sectionSpacing = "pb-0" }: BrandsProps) => {
   return (
-    <section className="pt-16">
+    <section className={twMerge("py-16", sectionSpacing ? sectionSpacing : "")}>
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div
-              className="wow fadeInUp flex flex-wrap items-center justify-center rounded-md bg-dark px-8 py-8 dark:bg-primary dark:bg-opacity-5 sm:px-10 md:px-[50px] md:py-[40px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]"
+              className={twMerge(
+                "wow fadeInUp bg flex flex-wrap items-center justify-center  rounded-md sm:px-10 md:px-[50px] md:py-[40px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]",
+                bgColor
+                  ? bgColor
+                  : "bg-dark px-8 py-8 dark:bg-primary dark:bg-opacity-5",
+              )}
               data-wow-delay=".1s
               "
             >
