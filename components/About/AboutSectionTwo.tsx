@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Text from "../atoms/Text";
+import { perks2Data } from "./aboutData";
 
 const AboutSectionTwo = () => {
   return (
@@ -17,34 +19,26 @@ const AboutSectionTwo = () => {
               />
             </div>
           </div>
+
           <div className="w-full px-4 lg:w-1/2">
             <div className="wow fadeInUp max-w-[470px]" data-wow-delay=".2s">
-              <div className="mb-9">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Bug free code
-                </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div className="mb-9">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Premier support
-                </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
-                </p>
-              </div>
-              <div className="mb-1">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Next.js
-                </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt
-                  consectetur adipiscing elit setim.
-                </p>
+              <div className="flex flex-col gap-9">
+                {perks2Data.map((perk) => (
+                  <div className="flex flex-col" key={perk.title}>
+                    <Text
+                      as="h3"
+                      intent="heading-two"
+                      fontWeight="bold"
+                      className="mb-4"
+                    >
+                      {perk.title}
+                    </Text>
+
+                    <Text as="p" intent="body-medium">
+                      {perk.description}
+                    </Text>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

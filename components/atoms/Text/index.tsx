@@ -52,7 +52,7 @@ const heading = cva("", {
         "text-base",
         "sm:text-lg md:text-xl sm:text-[20px] leading-[30px]",
       ],
-      "body-medium": ["text-lg leading-relaxed"],
+      "body-medium": ["text-base sm:text-lg leading-relaxed"],
       body: ["text-base"],
       label: ["text-sm"],
       caption: ["text-xs"],
