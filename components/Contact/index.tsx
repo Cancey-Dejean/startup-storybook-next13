@@ -1,3 +1,5 @@
+import { Button } from "../atoms/Button/Button";
+import Input from "../atoms/Input";
 import Text from "../atoms/Text";
 import NewsLatterBox from "./NewsLatterBox";
 
@@ -20,7 +22,7 @@ const Contact = () => {
                 Need Help? Open a Ticket
               </Text>
 
-              <Text as="h3" intent="body" className="mb-12">
+              <Text as="p" intent="body" className="mb-12">
                 Our support team will get back to you ASAP via email.
               </Text>
 
@@ -28,54 +30,22 @@ const Contact = () => {
                 <div className="-mx-4 flex flex-wrap">
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">
-                      <label
-                        htmlFor="name"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Your Name
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Enter your name"
-                        className="w-full rounded-md border border-transparent px-6 py-3 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
-                      />
+                      <Input shadow={false} label="Your Name" />
                     </div>
                   </div>
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">
-                      <label
-                        htmlFor="email"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Your Email
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="Enter your email"
-                        className="w-full rounded-md border border-transparent px-6 py-3 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
-                      />
+                        <Input shadow={false} label="Your Email" />
                     </div>
                   </div>
+
                   <div className="w-full px-4">
                     <div className="mb-8">
-                      <label
-                        htmlFor="message"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Your Message
-                      </label>
-                      <textarea
-                        name="message"
-                        rows={5}
-                        placeholder="Enter your Message"
-                        className="w-full resize-none rounded-md border border-transparent px-6 py-3 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
-                      ></textarea>
+                      <Input shadow={false} label=" Your Message" textArea />
                     </div>
                   </div>
                   <div className="w-full px-4">
-                    <button className="rounded-md bg-primary px-9 py-4 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp">
-                      Submit Ticket
-                    </button>
+                    <Button label="Submit Ticket" size="large" />
                   </div>
                 </div>
               </form>
