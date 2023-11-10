@@ -44,11 +44,19 @@ const Testimonials = () => {
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           {testimonialData.map((testimonial) => (
-            <SingleTestimonial key={testimonial.id} testimonial={testimonial} />
+            <SingleTestimonial
+              key={testimonial.id}
+              name={testimonial.name}
+              image={testimonial.image}
+              content={testimonial.content}
+              designation={testimonial.designation}
+              star={testimonial.star}
+            />
           ))}
         </div>
       </div>
-      <div className="absolute top-5 right-0 z-[-1]">
+
+      <div className="absolute right-0 top-5 z-[-1]">
         <svg
           width="238"
           height="531"
@@ -102,7 +110,8 @@ const Testimonials = () => {
           </defs>
         </svg>
       </div>
-      <div className="absolute left-0 bottom-5 z-[-1]">
+
+      <div className="absolute bottom-5 left-0 z-[-1]">
         <svg
           width="279"
           height="106"

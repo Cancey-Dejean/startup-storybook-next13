@@ -4,7 +4,7 @@ import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 
 const button = cva(
-  "rounded-md text-base flex items-center gap-2 duration-300 ease-in-out",
+  "rounded-md text-base flex items-center justify-center gap-2 duration-300 ease-in-out",
   {
     variants: {
       intent: {
@@ -28,6 +28,9 @@ const button = cva(
         one: "shadow-one",
         signUp: "shadow-signUp",
       },
+      fullWidth: {
+        true: "w-full",
+      },
       shadowHover: {
         true: "hover:shadow-signUp",
       },
@@ -41,7 +44,6 @@ const button = cva(
     },
   },
 );
-
 export type ButtonProps = VariantProps<typeof button> & {
   /**
    * Description goes here
@@ -86,6 +88,10 @@ export type ButtonProps = VariantProps<typeof button> & {
   /**
    * Description goes here
    */
+  fullWidth?: boolean;
+  /**
+   * Description goes here
+   */
   onClick?: () => void;
 } & AnchorHTMLAttributes<HTMLAnchorElement> &
   ButtonHTMLAttributes<HTMLButtonElement>;
@@ -100,10 +106,20 @@ export const Button = ({
   linkUrl = "",
   shadow = "none",
   shadowHover = false,
+  fullWidth = false,
   icon,
   onClick,
   ...props
 }: ButtonProps) => {
+  const buttonProps = {
+    intent,
+    size,
+    className,
+    fontWeight,
+    shadow,
+    shadowHover,
+    fullWidth,
+  };
   const formatId = label
     .replace(" ", "-")
     .replace("'", "")
@@ -112,11 +128,10 @@ export const Button = ({
   const iconContent = icon ? <span className="btn-icon">{icon}</span> : null;
   const textContent =
     label !== "" ? label : <span className="sr-only">{ariaLabel}</span>;
+
   return linkUrl === "" ? (
     <button
-      className={twMerge(
-        button({ intent, size, className, fontWeight, shadow, shadowHover }),
-      )}
+      className={twMerge(button(buttonProps))}
       {...props}
       id={formatId}
       aria-label={ariaLabel}
@@ -128,9 +143,7 @@ export const Button = ({
   ) : (
     <Link
       href={linkUrl}
-      className={twMerge(
-        button({ intent, size, className, fontWeight, shadow, shadowHover }),
-      )}
+      className={twMerge(button(buttonProps))}
       aria-label={ariaLabel}
       {...props}
     >

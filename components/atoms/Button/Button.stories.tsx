@@ -18,6 +18,7 @@ const meta = {
     size: "medium",
     shadow: "none",
     shadowHover: false,
+    fullWidth: false,
     label: "Button",
     ariaLabel: "Aria Label",
     linkUrl: "",

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
-import CheckWithText from "../molecules/CheckWithText/CheckWithText";
+import CheckWithText from "../molecules/CheckWithText";
 import { perksData } from "./aboutData";
 
 const AboutSectionOne = () => {
