@@ -44,6 +44,7 @@ const button = cva(
     },
   },
 );
+
 export type ButtonProps = VariantProps<typeof button> & {
   /**
    * Description goes here
