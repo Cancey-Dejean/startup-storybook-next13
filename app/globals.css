@@ -20,7 +20,7 @@
   }
 
   p {
-    @apply !leading-relaxed;
+    @apply !font-medium !leading-relaxed;
   }
 }
 
