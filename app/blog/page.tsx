@@ -19,7 +19,7 @@ const Blog = () => {
                 key={blog.id}
                 className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3"
               >
-                <SingleBlog blog={blog} />
+                <SingleBlog tags={blog.tags} title={blog.title} image={blog.image} paragraph={blog.paragraph} publishDate={blog.publishDate} authorImage={blog.authorImage} authorName={blog.authorName} authorDesignation={blog.authorDesignation}  />
               </div>
             ))}
           </div>

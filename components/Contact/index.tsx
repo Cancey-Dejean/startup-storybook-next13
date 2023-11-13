@@ -35,7 +35,7 @@ const Contact = () => {
                   </div>
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">
-                        <Input shadow={false} label="Your Email" />
+                        <Input shadow={false} label="Your Email" inputType="email" />
                     </div>
                   </div>
 

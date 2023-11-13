@@ -18,6 +18,8 @@ type InputProps = {
   showLabel?: boolean;
   textArea?: boolean;
   placeholderText?: string;
+  disabled?: boolean;
+  inputType?: "text" | "email" | "password" | "number" | "date" | "time";
 };
 
 const Input = ({
@@ -26,6 +28,9 @@ const Input = ({
   shadow = false,
   textArea = false,
   placeholderText,
+  inputType = "text",
+  disabled = false,
+  ...props
 }: InputProps) => {
   return (
     <div>
@@ -42,11 +47,12 @@ const Input = ({
             name="message"
             rows={5}
             placeholder={placeholderText}
-            // className="w-full resize-none rounded-md border border-transparent px-6 py-3 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
             className={twMerge(input({ shadow }))}
-          ></textarea>
+            disabled={disabled}
+            {...props}
+          />
         ) : (
-          <input placeholder={placeholderText} type="text" className={twMerge(input({ shadow }))} />
+          <input placeholder={placeholderText} type={inputType} className={twMerge(input({ shadow }))} disabled={disabled} {...props} />
         )}
       </label>
     </div>

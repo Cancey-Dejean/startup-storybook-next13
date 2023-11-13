@@ -27,7 +27,7 @@ const NewsLatterBox = () => {
 
       <div className="flex flex-col gap-4">
         <Input shadow={false} showLabel={false} label="Your Name" placeholderText="Enter your name" />
-        <Input shadow={false} showLabel={false} label="Your Email" placeholderText="Enter your email" />
+        <Input shadow={false} showLabel={false} label="Your Email" placeholderText="Enter your email" inputType="email" />
         <Button label="Subscribe" size="medium" type="submit" ariaLabel="Subscribe" />
      
         <Text as="p" intent="body" className="text-center">

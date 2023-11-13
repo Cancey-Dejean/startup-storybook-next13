@@ -19,14 +19,14 @@ const avatar = cva(
 
 export type AvatarProps = {
   size?: "small" | "medium";
-  image: string;
+  imgSrc: string;
   name: string;
   height?: number;
   width?: number;
 };
 
 const Avatar = ({
-  image = "/images/blog/author-01.png",
+  imgSrc = "/images/blog/author-01.png",
   name,
   height = 50,
   width = 50,
@@ -40,7 +40,7 @@ const Avatar = ({
       )}
     >
       <Image
-        src={image}
+        src={imgSrc}
         alt={name}
         width={width}
         height={height}
