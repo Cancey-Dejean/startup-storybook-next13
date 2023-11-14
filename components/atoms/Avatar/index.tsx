@@ -20,30 +20,26 @@ const avatar = cva(
 export type AvatarProps = {
   size?: "small" | "medium";
   imgSrc: string;
-  name: string;
-  height?: number;
-  width?: number;
+  name?: string;
 };
 
 const Avatar = ({
   imgSrc = "/images/blog/author-01.png",
-  name,
-  height = 50,
-  width = 50,
+  name = "Name",
   size,
 }: AvatarProps) => {
   return (
     <div
       className={twMerge(
-        "relative mr-4 w-full overflow-hidden rounded-full",
+        "relative w-full overflow-hidden rounded-full",
         avatar({ size }),
       )}
     >
       <Image
         src={imgSrc}
         alt={name}
-        width={width}
-        height={height}
+        width={50}
+        height={50}
         className={twMerge(avatar({ size }), `h-auto w-auto object-cover`)}
       />
     </div>

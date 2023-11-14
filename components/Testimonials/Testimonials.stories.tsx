@@ -6,6 +6,10 @@ const meta = {
   component: Testimonials,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
+  args: {
+    showBottomLeftImage: true,
+    showRightImage: true,
+  },
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
     layout: "fullscreen",

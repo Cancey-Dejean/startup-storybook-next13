@@ -6,8 +6,8 @@ type SwitchProps = {
 };
 
 const Switch = ({
-  switchOneText,
-  switchTwoText,
+  switchOneText = "Monthly", 
+  switchTwoText = "Yearly",
   isMonthly,
   setIsMonthly,
 }: SwitchProps) => {

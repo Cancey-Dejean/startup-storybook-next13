@@ -1,12 +1,16 @@
-import Text from "@/components/atoms/Text";
+import Text from "../../../components/atoms/Text";
 import Link from "next/link";
 
 const Breadcrumb = ({
-  pageName,
-  description,
+  pageName = "Page Name",
+  description = "Page Description",
+  showLeftImage = true,
+  showRightImage = true,
 }: {
   pageName: string;
   description: string;
+  showLeftImage?: boolean;
+  showRightImage?: boolean;
 }) => {
   return (
     <>
@@ -42,7 +46,8 @@ const Breadcrumb = ({
         </div>
 
         <div>
-          <span className="absolute top-0 left-0 z-[-1]">
+          {showLeftImage && (
+            <span className="absolute top-0 left-0 z-[-1]">
             <svg
               width="287"
               height="254"
@@ -70,7 +75,10 @@ const Breadcrumb = ({
               </defs>
             </svg>
           </span>
-          <span className="absolute right-0 top-0 z-[-1]">
+          )}
+          
+          {showRightImage && (
+            <span className="absolute right-0 top-0 z-[-1]">
             <svg
               width="628"
               height="258"
@@ -114,6 +122,7 @@ const Breadcrumb = ({
               </defs>
             </svg>
           </span>
+          )}
         </div>
       </section>
     </>

@@ -6,14 +6,16 @@ export type PricingBoxProps = {
   packageName: string;
   subtitle: string;
   children: React.ReactNode;
+  showBottomRightImage?: boolean;
 };
 
 const PricingBox = ({
-  price,
-  duration,
-  packageName,
-  subtitle,
+  price = "40",
+  duration = "mo",
+  packageName = "Lite",
+  subtitle = "Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim.",
   children,
+  showBottomRightImage = true,
 }: PricingBoxProps) => {
   return (
     <div className="w-full">
@@ -39,7 +41,9 @@ const PricingBox = ({
 
         <div className="flex flex-col gap-3">{children}</div>
 
-        <div className="absolute bottom-0 right-0 z-[-1]">
+
+{showBottomRightImage && (
+  <div className="absolute bottom-0 right-0 z-[-1]">
           <svg
             width="179"
             height="158"
@@ -83,6 +87,8 @@ const PricingBox = ({
             </defs>
           </svg>
         </div>
+)}
+        
       </div>
     </div>
   );

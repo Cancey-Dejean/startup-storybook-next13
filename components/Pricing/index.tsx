@@ -5,14 +5,17 @@ import OfferList from "./OfferList";
 import PricingBox from "./PricingBox";
 import Switch from "../molecules/Switch";
 import CheckWithText from "../molecules/CheckWithText";
-import { IconCheckSmall } from "../atoms/Icons";
 import {
   pricingBasicData,
   pricingLiteData,
   pricingPlusData,
 } from "./pricingData";
 
-const Pricing = () => {
+type PricingProps = {
+  showLeftImage?: boolean;
+};
+
+const Pricing = ({showLeftImage = true}: PricingProps) => {
   const [isMonthly, setIsMonthly] = useState<boolean>(true);
 
   return (
@@ -47,13 +50,6 @@ const Pricing = () => {
                 key={item.text}
               />
             ))}
-
-            {/* <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="inactive" />
-            <OfferList text="Free Lifetime Updates" status="inactive" /> */}
           </PricingBox>
 
           <PricingBox
@@ -90,7 +86,8 @@ const Pricing = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 z-[-1]">
+      {showLeftImage && (
+        <div className="absolute bottom-0 left-0 z-[-1]">
         <svg
           width="239"
           height="601"
@@ -144,6 +141,8 @@ const Pricing = () => {
           </defs>
         </svg>
       </div>
+      )}
+      
     </section>
   );
 };

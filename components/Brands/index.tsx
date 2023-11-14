@@ -54,8 +54,8 @@ const Brands = ({ bgColor, sectionSpacing = "pb-0" }: BrandsProps) => {
                   ? bgColor
                   : "bg-dark px-8 py-8 dark:bg-primary dark:bg-opacity-5",
               )}
-              data-wow-delay=".1s
-              "
+              data-wow-delay=".1s"
+              style={{ backgroundColor: bgColor }}
             >
               {brandsData.map((brand) => (
                 <SingleBrand key={brand.id} brand={brand} />

@@ -6,13 +6,13 @@ export type Testimonial = {
   name: AvatarProps["name"];
   designation: string;
   content: string;
-  image: AvatarProps["image"];
+  image: AvatarProps["imgSrc"];
   star?: number;
 };
 
 const SingleTestimonial = ({
-  name,
-  image,
+  name = "John Doe",
+  image = "/images/avatars/avatar-1.png",
   content,
   designation,
   star = 5,
@@ -37,7 +37,7 @@ const SingleTestimonial = ({
           “{content}
         </p>
         <div className="flex items-center">
-          <Avatar image={image} name={name} />
+          <Avatar imgSrc={image} name={name} />
 
           <div className="w-full">
             <h5 className="mb-1 text-lg font-semibold text-dark dark:text-white lg:text-base xl:text-lg">

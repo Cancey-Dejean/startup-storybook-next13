@@ -6,6 +6,25 @@ const meta = {
   component: Switch,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div className="max-w-[434px] py-20 mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
+  args: {
+    switchOneText: "Monthly", 
+    switchTwoText: "Yearly",
+  },
+  argTypes: {
+    isMonthly: {
+      control: false
+    },
+    setIsMonthly: {
+      control: false
+    },
+  },
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
     layout: "fullscreen",
