@@ -36,7 +36,7 @@ const SingleTestimonial = ({
         <p className="mb-8 border-b border-body-color border-opacity-10 pb-8 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-10 dark:text-white">
           “{content}
         </p>
-        <div className="flex items-center">
+        <div className="flex items-center gap-3">
           <Avatar imgSrc={image} name={name} />
 
           <div className="w-full">

@@ -1,9 +1,10 @@
 import SingleBlog from "@/components/Blog/SingleBlog";
-import blogData from "@/components/Blog/blogData";
+import { blogData } from "@/components/Blog/blogData";
 import Breadcrumb from "@/components/Common/BreadCrumb";
 import Pagination from "@/components/Common/Pagination/Pagination";
 
-const Blog = () => {
+interface BlogProps {}
+const Blog = ({}: BlogProps) => {
   return (
     <>
       <Breadcrumb
@@ -14,20 +15,17 @@ const Blog = () => {
       <section className="pb-[120px] pt-[120px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap justify-center">
-            {blogData.map((blog) => (
+            {blogData.map((item, i) => (
               <div
-                key={blog.id}
+                key={item.id}
                 className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3"
               >
-                <SingleBlog tags={blog.tags} title={blog.title} image={blog.image} paragraph={blog.paragraph} publishDate={blog.publishDate} authorImage={blog.authorImage} authorName={blog.authorName} authorDesignation={blog.authorDesignation}  />
+                <SingleBlog  />
               </div>
             ))}
           </div>
 
-          <div
-            className="wow fadeInUp -mx-4 flex flex-wrap"
-            data-wow-delay=".15s"
-          >
+          <div className="wow fadeInUp -mx-4 flex flex-wrap" data-wow-delay=".15s">
             <div className="w-full px-4">
               <Pagination />
             </div>

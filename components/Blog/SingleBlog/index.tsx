@@ -1,12 +1,21 @@
-import Avatar from "../../../components/atoms/Avatar";
+// import { Blog } from "@/types/blog";
 import Image from "next/image";
 import Link from "next/link";
-import { Blog } from "@/types/blog";
+
+export type Blog = {
+  id?: number;
+  title?: string;
+  paragraph?: string;
+  image?: string;
+  authorImage?: string;
+  authorName?: string;
+  authorDesignation?: string;
+  tags?: string;
+  publishDate?: string;
+};
 
 
-
-const SingleBlog = ({ blog }: { blog: Blog }) => {
-  const { title, image, paragraph, author, tags, publishDate } = blog;
+const SingleBlog = ({ title = "Best UI components for modern websites", image = "/images/blog/blog-01.jpg", paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.", authorImage = "/images/blog/author-01.png", authorDesignation = "Graphic Designer", authorName = "Samuyl Joshi", tags = "Creative", publishDate = "2025" }: Blog) => {
   return (
     <>
       <div
@@ -18,7 +27,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
           className="relative block aspect-[37/22] w-full"
         >
           <span className="absolute right-6 top-6 z-20 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold capitalize text-white">
-            {tags[0]}
+            {tags}
           </span>
           <Image src={image} alt="image" fill />
         </Link>
@@ -31,6 +40,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
               {title}
             </Link>
           </h3>
+
           <p className="mb-6 border-b border-body-color border-opacity-10 pb-6 text-base font-medium text-body-color dark:border-white dark:border-opacity-10">
             {paragraph}
           </p>
@@ -38,14 +48,14 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
             <div className="mr-5 flex items-center border-r border-body-color border-opacity-10 pr-5 dark:border-white dark:border-opacity-10 xl:mr-3 xl:pr-3 2xl:mr-5 2xl:pr-5">
               <div className="mr-4">
                 <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                  <Image src={author.image} alt="author" fill />
+                  <Image src={authorImage} alt="author" fill />
                 </div>
               </div>
               <div className="w-full">
                 <h4 className="mb-1 text-sm font-medium text-dark dark:text-white">
-                  By {author.name}
+                  By {authorName}
                 </h4>
-                <p className="text-xs text-body-color">{author.designation}</p>
+                <p className="text-xs text-body-color">{authorDesignation}</p>
               </div>
             </div>
             <div className="inline-block">
@@ -60,4 +70,5 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
     </>
   );
 };
+
 export default SingleBlog;
