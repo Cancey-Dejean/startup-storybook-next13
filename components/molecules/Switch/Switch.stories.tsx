@@ -16,6 +16,8 @@ const meta = {
   args: {
     switchOneText: "Monthly", 
     switchTwoText: "Yearly",
+    isMonthly: true,
+
   },
   argTypes: {
     isMonthly: {
