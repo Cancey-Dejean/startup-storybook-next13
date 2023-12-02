@@ -5,14 +5,41 @@ import Link from "next/link";
 
 
 export type SingleBlogBlog = {
+   /**
+   * Description goes here
+   */
   id?: number;
+   /**
+   * Description goes here
+   */
   title?: string;
+   /**
+   * Description goes here
+   */
   paragraph?: string;
+   /**
+   * Description goes here
+   */
   image?: string;
+   /**
+   * Description goes here
+   */
   authorImage?: string;
+   /**
+   * Description goes here
+   */
   authorName?: string;
+   /**
+   * Description goes here
+   */
   authorDesignation?: string;
+   /**
+   * Description goes here
+   */
   tags?: string;
+   /**
+   * Description goes here
+   */
   publishDate?: string;
 };
 

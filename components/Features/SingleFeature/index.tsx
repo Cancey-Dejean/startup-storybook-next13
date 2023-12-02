@@ -1,8 +1,17 @@
 import { FeatureIconGrid } from "../../../components/atoms/Icons";
 
 export type Feature = {
+   /**
+   * Description goes here
+   */
   icon?: React.ReactNode;
+   /**
+   * Description goes here
+   */
   title?: string;
+   /**
+   * Description goes here
+   */
   paragraph?: string;
 };
 

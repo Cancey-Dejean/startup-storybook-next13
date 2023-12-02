@@ -2,17 +2,35 @@ import Avatar, { AvatarProps } from "../../../components/atoms/Avatar";
 import { IconStar } from "../../../components/atoms/Icons";
 
 export type Testimonial = {
+   /**
+   * Description goes here
+   */
   id?: number;
+   /**
+   * Description goes here
+   */
   name: AvatarProps["name"];
+   /**
+   * Description goes here
+   */
   designation: string;
+   /**
+   * Description goes here
+   */
   content: string;
+   /**
+   * Description goes here
+   */
   image: AvatarProps["imgSrc"];
+   /**
+   * Description goes here
+   */
   star?: number;
 };
 
 const SingleTestimonial = ({
   name = "John Doe",
-  image = "/images/avatars/avatar-1.png",
+  image = "/images/author-01.png",
   content,
   designation,
   star = 5,

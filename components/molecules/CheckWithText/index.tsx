@@ -3,8 +3,17 @@ import { IconCheck } from "../../atoms/Icons";
 import React from "react";
 
 export type CheckWithTextProps = {
+   /**
+   * Description goes here
+   */
   text?: string;
+   /**
+   * Description goes here
+   */
   icon?: React.ReactNode;
+   /**
+   * Description goes here
+   */
   accessCheck?: boolean;
 };
 

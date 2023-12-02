@@ -1,11 +1,29 @@
 import { Button } from "../../../components/atoms/Button/Button";
 
 export type PricingBoxProps = {
+   /**
+   * Description goes here
+   */
   price: string;
+   /**
+   * Description goes here
+   */
   duration: string;
+   /**
+   * Description goes here
+   */
   packageName: string;
+   /**
+   * Description goes here
+   */
   subtitle: string;
+   /**
+   * Description goes here
+   */
   children: React.ReactNode;
+   /**
+   * Description goes here
+   */
   showBottomRightImage?: boolean;
 };
 

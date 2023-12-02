@@ -13,12 +13,33 @@ const input = cva(
 );
 
 type InputProps = {
+   /**
+   * Description goes here
+   */
   label: string;
+   /**
+   * Description goes here
+   */
   shadow?: boolean;
+   /**
+   * Description goes here
+   */
   showLabel?: boolean;
+   /**
+   * Description goes here
+   */
   textArea?: boolean;
+   /**
+   * Description goes here
+   */
   placeholderText?: string;
+   /**
+   * Description goes here
+   */
   disabled?: boolean;
+   /**
+   * Description goes here
+   */
   inputType?: "text" | "email" | "password" | "number" | "date" | "time";
 };
 

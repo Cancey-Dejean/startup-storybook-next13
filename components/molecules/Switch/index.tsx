@@ -1,7 +1,19 @@
 type SwitchProps = {
+   /**
+   * Description goes here
+   */
   isMonthly: boolean;
+   /**
+   * Description goes here
+   */
   setIsMonthly: React.Dispatch<React.SetStateAction<boolean>>;
+   /**
+   * Description goes here
+   */
   switchOneText: string;
+   /**
+   * Description goes here
+   */
   switchTwoText: string;
 };
 

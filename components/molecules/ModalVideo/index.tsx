@@ -6,23 +6,37 @@ import Image from "next/image";
 import { PlayIcon } from "../../atoms/Icons";
 
 export type ModalVideoProps = {
-  thumb: string | StaticImageData;
+   /**
+   * Description goes here
+   */
+  thumb: string ;
+   /**
+   * Description goes here
+   */
   thumbnailClass?: string;
-  thumbWidth?: number;
-  thumbHeight?: number;
+   /**
+   * Description goes here
+   */
   thumbAlt: string;
-  video: string;
-  videoWidth: number;
-  videoHeight: number;
+   /**
+   * Description goes here
+   */
+  videoSrc: string;
+   /**
+   * Description goes here
+   */
+  videoWidth?: number;
+   /**
+   * Description goes here
+   */
+  videoHeight?: number;
 };
 
 export default function ModalVideo({
-  thumb = "/images/video/video.jpg",
-  thumbWidth = 768,
-  thumbHeight = 432,
+  thumb = "https://dummyimage.com/768x432.png/dddddd/ffffff",
   thumbnailClass = "",
   thumbAlt = "Modal video thumbnail",
-  video = "/videos/video.mp4",
+  videoSrc = "/videos/video.mp4",
   videoWidth = 1920,
   videoHeight = 1080,
 }: ModalVideoProps) {
@@ -33,17 +47,17 @@ export default function ModalVideo({
     <>
       {/* 1. The button */}
       <button
-        className="focus-visible:ring-indigo-300 group relative flex items-center justify-center rounded-3xl focus:outline-none focus-visible:ring"
+        className="focus-visible:ring-indigo-300 group relative flex items-center justify-center rounded-3xl focus:outline-none focus-visible:ring "
         onClick={() => {
           setModalOpen(true);
         }}
         aria-label="Watch the video"
       >
         <Image
-          className={`w-auto rounded-md shadow-2xl transition-shadow duration-300 ease-in-out ${thumbnailClass}`}
+          className={`w-auto bg-[#ddd] aspect-video rounded-md shadow-2xl transition-shadow duration-300 ease-in-out ${thumbnailClass}`}
           src={thumb}
-          width={thumbWidth}
-          height={thumbHeight}
+          width={768}
+          height={432}
           alt={thumbAlt}
         />
         {/* Play icon */}
@@ -89,7 +103,7 @@ export default function ModalVideo({
                   controls
                   className="h-full object-cover"
                 >
-                  <source src={video} type="video/mp4" />
+                  <source src={videoSrc} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </Dialog.Panel>

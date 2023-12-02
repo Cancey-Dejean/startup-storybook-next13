@@ -18,13 +18,22 @@ const avatar = cva(
 );
 
 export type AvatarProps = {
+  /**
+   * Description goes here
+   */
   size?: "small" | "medium";
+  /**
+   * Description goes here
+   */
   imgSrc: string;
-  name?: string;
+  /**
+   * Description goes here
+   */
+  name: string;
 };
 
 const Avatar = ({
-  imgSrc = "/images/blog/author-01.png",
+  imgSrc = "/images/testimonials/author-02.png",
   name = "Name",
   size,
 }: AvatarProps) => {

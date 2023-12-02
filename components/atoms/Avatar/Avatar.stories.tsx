@@ -14,19 +14,11 @@ const meta = {
     ),
   ],
   args: {
-    imgSrc: "/images/blog/author-01.png",
+    imgSrc: "/images/testimonials/author-02.png",
     name : "Name",
-    // height: 50,
-    // width: 50,
     size : "medium",
   },
   argTypes: {
-    // width: {
-    //   control: false
-    // },
-    // height: {
-    //   control: false
-    // },
     size: {
       control: {
         type: "select",
