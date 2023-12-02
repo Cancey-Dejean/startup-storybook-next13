@@ -9,9 +9,23 @@ import Logo from "../atoms/Logo";
 import MobileMenuBtn from "../atoms/MobileMenuBtn";
 import { Button } from "../atoms/Button/Button";
 
-export type HeaderProps = {};
+ type MenuItem = {
+  id: number;
+  title: string;
+  path?: string;
 
-const Header = ({}: HeaderProps) => {
+};
+
+export type Menu = {
+  id: number;
+  title: string;
+  path?: string;
+  newTab: boolean;
+  submenu?: MenuItem[];
+};
+
+
+const Header = () => {
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarToggleHandler = () => {
@@ -85,7 +99,7 @@ const Header = ({}: HeaderProps) => {
             <div className="flex w-full items-center justify-between px-4">
               <div>
                 {/* Mobile Menu */}
-                <MobileMenuBtn navbarToggleHandler={navbarToggleHandler} />
+                <MobileMenuBtn navbarToggleHandler={navbarToggleHandler} navbarOpen={navbarOpen} />
 
                 <nav
                   id="navbarCollapse"
@@ -121,21 +135,25 @@ const Header = ({}: HeaderProps) => {
                                 </svg>
                               </span>
                             </button>
-                            <div
-                              className={`submenu relative left-0 top-full rounded-md bg-white transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
-                                openIndex === index ? "block" : "hidden"
-                              }`}
-                            >
-                              {menuItem.submenu.map(({ path, id, title }) => (
-                                <Link
-                                  href={path}
-                                  key={id}
-                                  className="block rounded py-2.5 text-sm text-dark hover:opacity-70 dark:text-white lg:px-3"
-                                >
-                                  {title}
-                                </Link>
-                              ))}
-                            </div>
+
+                            {menuItem.submenu && menuItem.submenu.length > 0 && (
+                          <div
+                            className={`submenu relative left-0 top-full rounded-md bg-white transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
+                              openIndex === index ? "block" : "hidden"
+                            }`}
+                          >
+                            {menuItem.submenu.map(({ path, id, title }) => (
+                              <Link
+                                href={path}
+                                key={id}
+                                className="block rounded py-2.5 text-sm text-dark hover:opacity-70 dark:text-white lg:px-3"
+                              >
+                                {title}
+                              </Link>
+                            ))}
+                                </div>
+                              )
+                            }
                           </>
                         )}
                       </li>

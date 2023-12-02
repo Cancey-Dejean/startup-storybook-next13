@@ -1,6 +1,9 @@
-type Props = {};
+type MobileMenuBtnProps = {
+  navbarToggleHandler: () => void;
+  navbarOpen: boolean;
+};
 
-const MobileMenuBtn = ({ navbarToggleHandler, navbarOpen }: Props) => {
+const MobileMenuBtn = ({ navbarToggleHandler, navbarOpen }: MobileMenuBtnProps) => {
   return (
     <button
       onClick={navbarToggleHandler}

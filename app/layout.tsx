@@ -21,9 +21,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="light"
+      className="dark"
       style={{
-        colorScheme: "light",
+        colorScheme: "dark",
       }}
     >
       <body className="dark:bg-black">

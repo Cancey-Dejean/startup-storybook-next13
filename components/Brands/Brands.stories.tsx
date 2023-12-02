@@ -4,6 +4,7 @@ import Brands from "./";
 const meta = {
   title: "Sections/Brands",
   component: Brands,
+
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
   parameters: {
@@ -17,6 +18,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => {
-    return <Brands {...args} />;
+    return <Brands sectionSpacing="" {...args} />;
   },
 };

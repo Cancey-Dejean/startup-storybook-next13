@@ -29,6 +29,10 @@
     @apply inline-flex;
   }
 
+  input:disabled, textarea:disabled {
+    @apply cursor-not-allowed;
+  }
+
   .sticky .header-logo {
     @apply py-5 lg:py-2;
   }
