@@ -61,7 +61,7 @@ const Testimonials = ({showBottomLeftImage = true, showRightImage = true}: Testi
         </div>
       </div>
 
-      {showRightImage && (
+      {showRightImage ? (
         <div className="absolute right-0 top-5 z-[-1]">
         <svg
           width="238"
@@ -116,9 +116,9 @@ const Testimonials = ({showBottomLeftImage = true, showRightImage = true}: Testi
           </defs>
         </svg>
       </div>
-      )}
+      ) : null}
     
-      {showBottomLeftImage && (
+      {showBottomLeftImage ? (
         <div className="absolute bottom-5 left-0 z-[-1]">
         <svg
           width="279"
@@ -193,7 +193,7 @@ const Testimonials = ({showBottomLeftImage = true, showRightImage = true}: Testi
           </defs>
         </svg>
       </div>
-      )}
+      ) : null}
       
     </section>
   );

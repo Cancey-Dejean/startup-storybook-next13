@@ -86,7 +86,7 @@ const Pricing = ({showLeftImage = true}: PricingProps) => {
         </div>
       </div>
 
-      {showLeftImage && (
+      {showLeftImage ? (
         <div className="absolute bottom-0 left-0 z-[-1]">
         <svg
           width="239"
@@ -141,7 +141,7 @@ const Pricing = ({showLeftImage = true}: PricingProps) => {
           </defs>
         </svg>
       </div>
-      )}
+      ) : null}
       
     </section>
   );

@@ -60,7 +60,7 @@ const Hero = ({
                 className="wow fadeInUp mx-auto max-w-[800px] text-center"
                 data-wow-delay=".2s"
               >
-                {title !== "" && (
+                {title !== "" ? (
                   <Text
                     as="h1"
                     intent="display-one"
@@ -69,9 +69,9 @@ const Hero = ({
                   >
                     {title}
                   </Text>
-                )}
+                ) : null}
 
-                {subText !== "" && (
+                {subText !== "" ? (
                   <Text
                     as="p"
                     intent="body-large"
@@ -80,19 +80,19 @@ const Hero = ({
                   >
                     {subText}
                   </Text>
-                )}
+                ) : null}
 
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                  {btnOneLabel !== "" && (
+                  {btnOneLabel !== "" ? (
                     <Button
                       label={btnOneLabel}
                       size="large"
                       linkUrl={btnOneLink}
                       fontWeight="semibold"
                     />
-                  )}
+                  ) : null}
 
-                  {btnTwoLabel !== "" && (
+                  {btnTwoLabel !== "" ? (
                     <Button
                       intent="secondary"
                       label={btnTwoLabel}
@@ -100,24 +100,24 @@ const Hero = ({
                       linkUrl={btnTwoLink}
                       fontWeight="semibold"
                     />
-                  )}
+                  ) : null}
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {showImageTopRight && (
+        {showImageTopRight ? (
           <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
             <HeroImageRight />
           </div>
-        )}
+        ) : null}
 
-        {showImageBottomLeft && (
+        {showImageBottomLeft ? (
           <div className="absolute bottom-0 left-0 z-[-1] opacity-30 lg:opacity-100">
             <HeroImageBottomLeft />
           </div>
-        )}
+        ) : null}
       </section>
     </>
   );

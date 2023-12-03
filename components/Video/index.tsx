@@ -37,11 +37,11 @@ const Video = ({showBgImg = true}: VideoProps) => {
         </div>
       </div>
       
-      {showBgImg && (
+      {showBgImg ? (
         <div className="absolute bottom-0 left-0 right-0 z-[-1]">
           <img src="/images/video/shape.svg" alt="shape" className="w-full" />
         </div>
-      )}
+      ) : null}
       
     </section>
   );

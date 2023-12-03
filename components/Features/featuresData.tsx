@@ -22,7 +22,7 @@ export const featuresData = [
   },
   {
     icon: <FeatureIconDotsGrid />,
-    title: "Next.js 13 (Latest)",
+    title: "Next.js 14 (Latest)",
     paragraph:
       "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
   },

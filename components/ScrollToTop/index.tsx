@@ -30,7 +30,7 @@ export default function ScrollToTop() {
 
   return (
     <div className="fixed bottom-8 right-8 z-[99]">
-      {isVisible && (
+      {isVisible ? (
         <div
           onClick={scrollToTop}
           aria-label="scroll to top"
@@ -38,7 +38,7 @@ export default function ScrollToTop() {
         >
           <span className="mt-[6px] h-3 w-3 rotate-45 border-t border-l border-white"></span>
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

@@ -46,7 +46,7 @@ const Breadcrumb = ({
         </div>
 
         <div>
-          {showLeftImage && (
+          {showLeftImage ? (
             <span className="absolute top-0 left-0 z-[-1]">
             <svg
               width="287"
@@ -75,9 +75,9 @@ const Breadcrumb = ({
               </defs>
             </svg>
           </span>
-          )}
+          ) : null}
           
-          {showRightImage && (
+          {showRightImage ? (
             <span className="absolute right-0 top-0 z-[-1]">
             <svg
               width="628"
@@ -122,7 +122,7 @@ const Breadcrumb = ({
               </defs>
             </svg>
           </span>
-          )}
+          ) : null}
         </div>
       </section>
     </>

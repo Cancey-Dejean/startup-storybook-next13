@@ -23,7 +23,7 @@ const CheckWithText = ({
   accessCheck,
 }: CheckWithTextProps) => (
   <>
-  {text !== "" && (
+  {text !== "" ? (
      <div className="flex items-center gap-4">
      <span
        className={twMerge(
@@ -35,7 +35,7 @@ const CheckWithText = ({
      </span>
      <p className="font-medium">{text}</p>
    </div>
-  )}
+  ) : null}
   </>
  
 );
