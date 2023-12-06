@@ -1,60 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    font-family: "Inter", sans-serif;
-    @apply flex h-screen flex-col text-body-color dark:text-white dark:opacity-90;
-  }
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply text-black dark:text-white;
-  }
-
-  p {
-    @apply !font-medium !leading-relaxed;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
   }
 }
 
-@layer components {
-  input[type="checkbox"]:checked ~ label span svg {
-    @apply inline-flex;
-  }
-
-  input:disabled, textarea:disabled {
-    @apply cursor-not-allowed;
-  }
-
-  .sticky .header-logo {
-    @apply py-5 lg:py-2;
-  }
-
-  .sticky .menu-scroll.active {
-    @apply opacity-70;
-  }
-
-  input#togglePlan:checked ~ .dot {
-    @apply translate-x-full;
-  }
-
-  input#checkboxLabel:checked ~ .box span {
-    @apply opacity-100;
-  }
-}
-
-/* Storybook Styles ONLY: DO NOT DELETE */
-.sbdocs-content {
-  @apply mx-auto !max-w-[1920px];
-}
-
-.sbdocs header {
-  @apply sticky;
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
