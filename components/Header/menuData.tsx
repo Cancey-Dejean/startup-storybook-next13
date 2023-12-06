@@ -1,5 +1,3 @@
-import { Menu } from "@/types/menu"
-
 const menuData = [
   {
     id: 1,

@@ -1,9 +1,8 @@
-import { Brand } from "@/types/brand";
-import Image from "next/image";
-import Link from "next/link";
-import { twMerge } from "tailwind-merge";
+import Image from "next/image"
+import Link from "next/link"
+import { twMerge } from "tailwind-merge"
 
-const brandsData: Brand[] = [
+const brandsData = [
   {
     id: 1,
     name: "UIdeck",
@@ -34,44 +33,17 @@ const brandsData: Brand[] = [
     href: "https://tailadmin.com",
     image: "/images/brands/tailadmin.svg",
   },
-];
+]
 
-export type BrandsProps = {
-  bgColor?: string;
-  sectionSpacing?: string;
-};
-
-const Brands = ({ bgColor, sectionSpacing = "pb-0" }: BrandsProps) => {
-  return (
-    <section className={twMerge("py-16", sectionSpacing ? sectionSpacing : "")}>
-      <div className="container">
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4">
-            <div
-              className={twMerge(
-                "wow fadeInUp bg flex flex-wrap items-center justify-center  rounded-md sm:px-10 md:px-[50px] md:py-[40px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]",
-                bgColor
-                  ? bgColor
-                  : "bg-dark px-8 py-8 dark:bg-primary dark:bg-opacity-5",
-              )}
-              data-wow-delay=".1s"
-              style={{ backgroundColor: bgColor }}
-            >
-              {brandsData.map((brand) => (
-                <SingleBrand key={brand.id} brand={brand} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default Brands;
+type Brand = {
+  id: number
+  name: string
+  href: string
+  image: string
+}
 
 const SingleBrand = ({ brand }: { brand: Brand }) => {
-  const { href, image, name } = brand;
+  const { href, image, name } = brand
 
   return (
     <div className="mx-3 flex w-full max-w-[160px] items-center justify-center py-[15px] sm:mx-4 lg:max-w-[130px] xl:mx-6 xl:max-w-[150px] 2xl:mx-8 2xl:max-w-[160px]">
@@ -84,5 +56,39 @@ const SingleBrand = ({ brand }: { brand: Brand }) => {
         <Image src={image} alt={name} fill />
       </Link>
     </div>
-  );
-};
+  )
+}
+
+export type BrandsProps = {
+  bgColor?: string
+  sectionSpacing?: string
+}
+
+const Brands = ({ bgColor, sectionSpacing = "pb-0" }: BrandsProps) => {
+  return (
+    <section className={twMerge("py-16", sectionSpacing ? sectionSpacing : "")}>
+      <div className="container">
+        <div className="-mx-4 flex flex-wrap">
+          <div className="w-full px-4">
+            <div
+              className={twMerge(
+                "wow fadeInUp bg flex flex-wrap items-center justify-center  rounded-md sm:px-10 md:px-[50px] md:py-[40px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]",
+                bgColor
+                  ? bgColor
+                  : "bg-dark px-8 py-8 dark:bg-primary dark:bg-opacity-5"
+              )}
+              data-wow-delay=".1s"
+              style={{ backgroundColor: bgColor }}
+            >
+              {brandsData.map((brand) => (
+                <SingleBrand key={brand.id} brand={brand} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Brands
